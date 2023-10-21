@@ -20,6 +20,9 @@ RUN groupadd -g $GID $GROUPNAME && \
     useradd -m -s /bin/bash -u $UID -g $GID $USERNAME
 USER $USERNAME
 
+# Download emulator
+RUN firebase emulators:exec --only firestore bash || true
+
 WORKDIR /firestore
 
 ENTRYPOINT [ "firebase" ]
