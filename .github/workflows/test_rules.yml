@@ -1,0 +1,23 @@
+name: Test Firestore Security Rules
+
+on:
+  workflow_call:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Docker image
+        run: docker build -t firestore-emulator .
+      - uses: actions/checkout@v4
+        with:
+          repository: firebase/quickstart-testing
+          sparse-checkout: unit-test-security-rules-v9
+      - name: Install dependencies
+        working-directory: unit-test-security-rules-v9
+        run: npm install
+      - name: Run tests
+        working-directory: unit-test-security-rules-v9
+        run: docker run --rm -v$(pwd):/firestore firestore-emulator "firebase" "emulators:exec" "--only" "firestore" '"npm run test-firestore"'
