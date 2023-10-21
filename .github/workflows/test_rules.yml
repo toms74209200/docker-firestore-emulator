@@ -15,9 +15,9 @@ jobs:
         with:
           repository: firebase/quickstart-testing
           sparse-checkout: unit-test-security-rules-v9
-      - name: Install dependencies
+      - name: Set user
         working-directory: unit-test-security-rules-v9
-        run: npm install
+        run: sudo chown 1000:1000 -R .
       - name: Run tests
         working-directory: unit-test-security-rules-v9
-        run: docker run --rm -v$(pwd):/firestore firestore-emulator "firebase" "emulators:exec" "--only" "firestore" '"npm run test-firestore"'
+        run: docker run --rm -v $(pwd):/firestore firestore-emulator  "emulators:exec" "--only" "firestore" "npm install && npm run test-firestore"
