@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - "*"
+  schedule:
+    - cron: "0 21 * * 2"
 
 jobs:
   test:
@@ -38,3 +40,9 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:${{ env.LATEST_TAG }}
             ghcr.io/${{ github.repository }}:latest
             ghcr.io/${{ github.repository }}:${{ env.LATEST_TAG }}
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: ${{ github.repository }}
