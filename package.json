@@ -1,0 +1,18 @@
+{
+  "name": "docker-firestore-emulator",
+  "version": "1.0.0",
+  "description": "Check update npm dependencies for Dockerfile",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/toms74209200/docker-firestore-emulator.git"
+  },
+  "author": "toms74209200",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toms74209200/docker-firestore-emulator/issues"
+  },
+  "homepage": "https://github.com/toms74209200/docker-firestore-emulator#readme",
+  "devDependencies": {
+    "firebase-tools": "12.7"
+  }
+}
