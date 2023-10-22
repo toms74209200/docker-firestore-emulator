@@ -1,5 +1,7 @@
 # docker-firestore-emulator
 
+[![GitHub](https://img.shields.io/badge/GitHub-repository---)](https://github.com/toms74209200/docker-firestore-emulator)
+[![Docker Hub](https://img.shields.io/badge/Docker%20Hub---?color=1D63ED)](https://hub.docker.com/r/motomotomato/firestore-emulator)
 ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/toms74209200/docker-firestore-emulator)
 [![Build and upload image](https://github.com/toms74209200/docker-firestore-emulator/actions/workflows/build_image.yml/badge.svg)](https://github.com/toms74209200/docker-firestore-emulator/actions/workflows/build_image.yml)
 
@@ -57,6 +59,11 @@ services:
     volumes:
       - .:/firestore
 ```
+
+## References
+
+- [Introduction to Firebase Local Emulator Suite](https://firebase.google.com/docs/emulator-suite)  
+https://firebase.google.com/docs/emulator-suite
 
 ## License
 
