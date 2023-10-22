@@ -1,7 +1,7 @@
 # docker-firestore-emulator
 
 ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/toms74209200/docker-firestore-emulator)
-[![Build and upload image](https://github.com/toms74209200/docker-firestore-emulator/actions/workflows/build_image.yml/badge.svg?branch=master)](https://github.com/toms74209200/docker-firestore-emulator/actions/workflows/build_image.yml)
+[![Build and upload image](https://github.com/toms74209200/docker-firestore-emulator/actions/workflows/build_image.yml/badge.svg)](https://github.com/toms74209200/docker-firestore-emulator/actions/workflows/build_image.yml)
 
 Firestore Emulator Docker image
 
