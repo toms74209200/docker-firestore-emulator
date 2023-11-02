@@ -18,6 +18,8 @@ jobs:
         - test
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: get latest tag
         run: echo LATEST_TAG=`git tag -l --sort -authordate | head -n1` >> $GITHUB_ENV
       - uses: docker/setup-buildx-action@v3
