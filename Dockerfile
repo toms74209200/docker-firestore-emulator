@@ -1,8 +1,8 @@
-FROM debian:bullseye-slim
+FROM debian:bookworm-slim
 
-COPY --from=node:18-bullseye-slim --chown=root:root /usr/local/bin /usr/bin
-COPY --from=node:18-bullseye-slim --chown=root:root /usr/local/lib/node_modules /usr/lib/node_modules
-COPY --from=node:18-bullseye-slim --chown=root:root /root/.npm /root/.npm
+COPY --from=node:20-bookworm-slim --chown=root:root /usr/local/bin /usr/bin
+COPY --from=node:20-bookworm-slim --chown=root:root /usr/local/lib/node_modules /usr/lib/node_modules
+COPY --from=node:20-bookworm-slim --chown=root:root /root/.npm /root/.npm
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
