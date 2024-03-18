@@ -9,7 +9,7 @@ RUN apt-get update \
     openjdk-17-jre-headless \
     && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN npm install -g firebase-tools@13.4 \
+RUN npm install -g firebase-tools@13.5 \
     && firebase setup:emulators:firestore
 
 ARG USERNAME=firestore
