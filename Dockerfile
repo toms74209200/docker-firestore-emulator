@@ -1,3 +1,6 @@
+# syntax=docker/dockerfile:1
+# check=error=true
+
 FROM debian:bookworm-slim
 
 COPY --from=node:20-bookworm-slim --chown=root:root /usr/local/bin /usr/bin
