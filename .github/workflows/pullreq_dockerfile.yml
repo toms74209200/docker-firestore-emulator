@@ -1,0 +1,14 @@
+name: Pull Request(Dockerfile)
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "Dockerfile"
+
+jobs:
+  test:
+    uses: ./.github/workflows/test_rules.yml
+  docker-check:
+    uses: ./.github/workflows/test_lint.yml
