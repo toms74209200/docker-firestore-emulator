@@ -9,7 +9,5 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Upgrade Docker
-        run: sudo apt-get update && sudo apt-get upgrade -y docker
       - name: Docker Build Check
         run: docker build . --check
