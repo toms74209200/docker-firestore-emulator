@@ -7,14 +7,15 @@ on:
   schedule:
     - cron: "0 21 * * 2"
 
+env:
+  DOCKER_IMAGE_NAME: firestore-emulator
+
 jobs:
   test:
     uses: ./.github/workflows/test_rules.yml
   build:
     needs:
       - test
-    env:
-      DOCKER_IMAGE_NAME: firestore-emulator
     strategy:
       matrix:
         include:
