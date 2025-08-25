@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Build Docker image
         run: docker build -t firestore-emulator .
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           repository: firebase/quickstart-testing
           sparse-checkout: unit-test-security-rules-v9
