@@ -1,14 +1,14 @@
 # syntax=docker/dockerfile:1
 # check=error=true
 
-FROM debian:bookworm-slim
+FROM debian:trixie-slim
 
-COPY --from=node:22-bookworm-slim --chown=root:root /usr/local/bin /usr/bin
-COPY --from=node:22-bookworm-slim --chown=root:root /usr/local/lib/node_modules /usr/lib/node_modules
+COPY --from=node:24-trixie-slim --chown=root:root /usr/local/bin /usr/bin
+COPY --from=node:24-trixie-slim --chown=root:root /usr/local/lib/node_modules /usr/lib/node_modules
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-    openjdk-17-jre-headless \
+    openjdk-21-jre-headless \
     && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g firebase-tools@14.22 \
