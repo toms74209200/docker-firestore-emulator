@@ -11,7 +11,7 @@ RUN apt-get update \
     openjdk-21-jre-headless \
     && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN npm install -g firebase-tools@14.26 \
+RUN npm install -g firebase-tools@14.27 \
     && firebase setup:emulators:firestore
 
 ARG USERNAME=firestore
