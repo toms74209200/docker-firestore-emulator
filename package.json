@@ -13,6 +13,6 @@
   },
   "homepage": "https://github.com/toms74209200/docker-firestore-emulator#readme",
   "devDependencies": {
-    "firebase-tools": "15.6"
+    "firebase-tools": "15.7"
   }
 }
