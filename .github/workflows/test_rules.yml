@@ -14,10 +14,10 @@ jobs:
       - uses: actions/checkout@v7
         with:
           repository: firebase/quickstart-testing
-          sparse-checkout: unit-test-security-rules-v9
+          sparse-checkout: unit-test-security-rules
       - name: Set user
-        working-directory: unit-test-security-rules-v9
+        working-directory: unit-test-security-rules
         run: sudo chown 1000:1000 -R .
       - name: Run tests
-        working-directory: unit-test-security-rules-v9
+        working-directory: unit-test-security-rules
         run: docker run --rm -v $(pwd):/firestore firestore-emulator  "emulators:exec" "--only" "firestore" "npm install && npm run test-firestore"
