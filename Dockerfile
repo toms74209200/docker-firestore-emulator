@@ -12,7 +12,7 @@ RUN apt-get update \
     && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g firebase-tools@15.32 \
-    && firebase setup:emulators:firestore
+    && npm cache clean --force
 
 ARG USERNAME=firestore
 ARG GROUPNAME=firestore
@@ -23,7 +23,8 @@ RUN groupadd -g $GID $GROUPNAME && \
 USER $USERNAME
 
 # Download emulator
-RUN firebase emulators:exec --only firestore bash || true
+WORKDIR /home/$USERNAME
+RUN firebase setup:emulators:firestore
 
 WORKDIR /firestore
 
